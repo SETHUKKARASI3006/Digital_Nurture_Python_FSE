@@ -1,0 +1,145 @@
+// HANDS-ON 5
+
+// Task 1: Create Database & Collection
+
+use("college_nosql");
+
+// Collection will be created automatically on first insert
+db.createCollection("feedback");
+
+// Insert Sample Documents
+
+db.feedback.insertMany([
+
+{
+    student_id: 1,
+    course_code: "CS101",
+    semester: "2022-ODD",
+    rating: 5,
+    comments: "Excellent teaching.",
+    tags: ["challenging","well-structured","good-examples"],
+    submitted_at: ISODate("2022-11-30T10:15:00Z"),
+    attachments: [
+        { filename: "notes.pdf", size_kb: 240 }
+    ]
+},
+
+{
+    student_id: 2,
+    course_code: "CS101",
+    semester: "2022-ODD",
+    rating: 4,
+    comments: "Very informative.",
+    tags: ["challenging","interactive"],
+    submitted_at: ISODate("2022-11-28T09:30:00Z"),
+    attachments: [
+        { filename: "assignment.pdf", size_kb: 150 }
+    ]
+},
+
+{
+    student_id: 3,
+    course_code: "CS101",
+    semester: "2021-EVEN",
+    rating: 2,
+    comments: "Needs improvement.",
+    tags: ["difficult","challenging"],
+    submitted_at: ISODate("2021-12-02T10:00:00Z"),
+    attachments: [
+        { filename: "feedback.docx", size_kb: 120 }
+    ]
+},
+
+{
+    student_id: 4,
+    course_code: "CS102",
+    semester: "2022-ODD",
+    rating: 5,
+    comments: "Loved the practical sessions.",
+    tags: ["database","interesting"],
+    submitted_at: ISODate("2022-11-25T14:20:00Z"),
+    attachments: [
+        { filename: "lab.pdf", size_kb: 300 }
+    ]
+},
+
+{
+    student_id: 5,
+    course_code: "CS102",
+    semester: "2022-EVEN",
+    rating: 3,
+    comments: "Average experience.",
+    tags: ["database","theory"],
+    submitted_at: ISODate("2023-05-01T11:00:00Z"),
+    attachments: [
+        { filename: "report.pdf", size_kb: 210 }
+    ]
+},
+
+{
+    student_id: 6,
+    course_code: "EC101",
+    semester: "2022-ODD",
+    rating: 1,
+    comments: "Very difficult.",
+    tags: ["electronics","hard"],
+    submitted_at: ISODate("2022-11-20T08:45:00Z"),
+    attachments: [
+        { filename: "circuit.pdf", size_kb: 280 }
+    ]
+},
+
+{
+    student_id: 7,
+    course_code: "ME101",
+    semester: "2021-EVEN",
+    rating: 4,
+    comments: "Good explanation.",
+    tags: ["mechanical","concepts"],
+    submitted_at: ISODate("2021-12-01T12:00:00Z"),
+    attachments: [
+        { filename: "thermo.pdf", size_kb: 190 }
+    ]
+},
+
+{
+    student_id: 8,
+    course_code: "CS103",
+    semester: "2022-ODD",
+    rating: 5,
+    comments: "Excellent OOP course.",
+    tags: ["oop","coding"],
+    submitted_at: ISODate("2022-11-18T16:00:00Z"),
+    attachments: [
+        { filename: "oop.pdf", size_kb: 220 }
+    ]
+},
+
+{
+    student_id: 9,
+    course_code: "CS103",
+    semester: "2022-EVEN",
+    rating: 2,
+    comments: "Need more examples.",
+    tags: ["coding","practice"],
+    submitted_at: ISODate("2023-04-15T10:20:00Z"),
+    attachments: [
+        { filename: "code.zip", size_kb: 500 }
+    ]
+},
+
+// Document without attachments
+{
+    student_id: 10,
+    course_code: "CS102",
+    semester: "2022-ODD",
+    rating: 5,
+    comments: "Fantastic course.",
+    tags: ["database","challenging"],
+    submitted_at: ISODate("2022-11-29T09:15:00Z")
+}
+
+]);
+
+// Verify Count
+db.feedback.countDocuments();
