@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Student Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">StudentPortal</div>
+        <div class="menu-toggle">Menu ☰</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Grades</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h1>Welcome to the Student Portal</h1>
+            <p>Your one-stop destination for managing classes, tracking academic progress, and discovering new learning opportunities.</p>
+            <button type="button">Explore Courses</button>
+        </section>
+
+        <div id="selected-course-panel" style="margin-bottom: 1.5rem; padding: 1rem; background: #e0f2fe; border-radius: 8px; display: none; border-left: 5px solid #0284c7;">
+            <strong>Selected Course Details:</strong> <span id="selected-course-text">None</span>
+        </div>
+
+        <section id="controls" style="margin-bottom: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <input type="text" id="search-courses" placeholder="Search courses..." style="flex: 1; padding: 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px; min-width: 200px;">
+            <button id="sort-credits" style="background-color: #0f172a; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold;">Sort by Credits ↓</button>
+        </section>
+
+        <section id="courses">
+            <h2>Available Courses</h2>
+            <div class="course-grid"></div>
+            
+            <p id="total-credits" style="margin-top: 1.5rem; font-size: 1.2rem; font-weight: bold; color: #1e293b; text-align: right;"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Student Portal. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
