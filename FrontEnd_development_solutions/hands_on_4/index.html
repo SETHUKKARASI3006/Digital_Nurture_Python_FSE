@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous Student Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .loading-indicator {
+            display: inline-block;
+            padding: 1rem;
+            color: #2563eb;
+            font-weight: bold;
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+        .error-banner {
+            background-color: #fef2f2;
+            border: 1px solid #f87171;
+            color: #991b1b;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .btn-retry {
+            background-color: #dc2626;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .btn-retry:hover { background-color: #b91c1c; }
+        
+        #notifications {
+            margin-top: 3rem;
+            border-top: 2px dashed #cbd5e1;
+            padding-top: 2rem;
+        }
+        .notification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .notification-card {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 4px solid #10b981;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .notification-card h4 {
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">StudentPortal Pro</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Notifications</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="courses">
+            <h2>Your Academic Courses</h2>
+            <div id="course-loading" class="loading-indicator">Loading courses...</div>
+            <div class="course-grid"></div>
+        </section>
+
+        <section id="notifications">
+            <h2>Live Campus Notifications (via Axios)</h2>
+            <div id="notify-status-area"></div>
+            <div class="notification-grid"></div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
