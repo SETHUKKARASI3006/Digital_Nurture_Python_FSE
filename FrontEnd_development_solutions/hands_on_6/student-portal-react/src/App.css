@@ -1,0 +1,107 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f8;
+  color: #1f2937;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background-color: #1e3a8a;
+  color: #fff;
+}
+
+.app-header nav ul { list-style: none; display: flex; gap: 20px; }
+.app-header nav ul li a { color: #fff; text-decoration: none; }
+
+main { max-width: 900px; margin: 0 auto; padding: 24px; }
+
+#courses input,
+.profile-section input {
+  width: 100%;
+  max-width: 320px;
+  padding: 10px;
+  margin: 12px 0;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  display: block;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.course-card {
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.course-card h3 { color: #1e3a8a; margin-bottom: 6px; }
+.credits { font-size: 0.85rem; font-weight: bold; color: #2563eb; }
+
+.course-card button {
+  display: block;
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: #1e3a8a;
+  color: #fff;
+  cursor: pointer;
+}
+
+.error { color: #dc2626; }
+
+.profile-section {
+  margin-top: 40px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.profile-section label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.preview { margin-top: 12px; font-style: italic; color: #4b5563; }
+
+.app-footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1e3a8a;
+  color: #fff;
+  margin-top: 40px;
+}
+
+.enrolled-list ul { list-style: none; margin-top: 12px; }
+.enrolled-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  background: #fff;
+}
+.enrolled-list li button {
+  border: none;
+  background: #dc2626;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.course-detail { padding: 20px; background: #fff; border-radius: 8px; }
